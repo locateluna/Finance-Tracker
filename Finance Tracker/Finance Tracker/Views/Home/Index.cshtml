@@ -1,0 +1,57 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Finance Tracker</h1>
+    <p>This website is an interface that will mimic my <a href="https://docs.google.com/spreadsheets/d/1PAMhqKJXxiuwFeeDXgkYMKOS7X7--GTwWMi37hMGPSI/edit#gid=1676047141">finance spreadsheet</a>.</p>
+
+    <div id="currentNetWorthBox">
+        <div><h4>Current Net Worth</h4></div>
+        <div id="currentNetWorthVal">0</div>
+    </div>
+    
+    <button type="button" onclick="openPITInfo()" id="updatePITbtn">Update point in time information</button>
+
+    <div class="form-popup" id="PITForm">
+        <form class="form-container">
+            <h1>Update Point in Time Information</h1>
+
+            <label for="chaseChecking"><b>Chase Checking</b></label>
+            <input type="number" id="chaseChecking" required>
+
+            <br>
+
+            <label for="chaseCat"><b>Chase Cat</b></label>
+            <input type="number" id="chaseCat" required>
+
+            <br>
+
+            <label for="chaseGift"><b>Chase Gift</b></label>
+            <input type="number" id="chaseGift" required>
+
+            <br>
+
+            <label for="chaseTravel"><b>Chase Travel</b></label>
+            <input type="number" required>
+
+            <br>
+
+            <label for="vio"><b>Vio High Yield Savings</b></label>
+            <input type="number" required>
+
+            <br>
+
+            <label for="FSA Account"><b>FSA Account</b></label>
+            <input type="number" required>
+
+            <br>
+
+
+            <button type="submit" class="btn" onclick="updatePIT()">Update PIT</button>
+            <button type="submit" class="btn" onclick="updateMonth()">Update Month</button>
+            <button type="button" class="btn cancel" onclick="closePITInfo()">Close</button>
+        </form>
+    </div>
+
+</div>
