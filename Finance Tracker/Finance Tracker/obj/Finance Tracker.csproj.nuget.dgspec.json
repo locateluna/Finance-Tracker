@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\amand\\source\\repos\\Finance Tracker\\Finance Tracker\\Finance Tracker.csproj": {}
+    "C:\\Users\\amand\\OneDrive\\Desktop\\Finance-Tracker\\Finance Tracker\\Finance Tracker\\Finance Tracker.csproj": {}
   },
   "projects": {
-    "C:\\Users\\amand\\source\\repos\\Finance Tracker\\Finance Tracker\\Finance Tracker.csproj": {
+    "C:\\Users\\amand\\OneDrive\\Desktop\\Finance-Tracker\\Finance Tracker\\Finance Tracker\\Finance Tracker.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\amand\\source\\repos\\Finance Tracker\\Finance Tracker\\Finance Tracker.csproj",
+        "projectUniqueName": "C:\\Users\\amand\\OneDrive\\Desktop\\Finance-Tracker\\Finance Tracker\\Finance Tracker\\Finance Tracker.csproj",
         "projectName": "Finance Tracker",
-        "projectPath": "C:\\Users\\amand\\source\\repos\\Finance Tracker\\Finance Tracker\\Finance Tracker.csproj",
+        "projectPath": "C:\\Users\\amand\\OneDrive\\Desktop\\Finance-Tracker\\Finance Tracker\\Finance Tracker\\Finance Tracker.csproj",
         "packagesPath": "C:\\Users\\amand\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\amand\\source\\repos\\Finance Tracker\\Finance Tracker\\obj\\",
+        "outputPath": "C:\\Users\\amand\\OneDrive\\Desktop\\Finance-Tracker\\Finance Tracker\\Finance Tracker\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -45,6 +45,16 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.18, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.18, )"
+            },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[7.0.12, )"

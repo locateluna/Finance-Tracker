@@ -22,7 +22,7 @@ body {
 }
 
 /* The popup form - hidden by default */
-.form-popup {
+#PITForm {
     display: none;
     position: center;
     bottom: 0;
@@ -32,8 +32,8 @@ body {
 }
 
 #currentNetWorthBox {
-    border: 3px solid #f1f1f1;
-    left: 10%;
+    float: left;
+    border: 3px solid green;
 }
 
 #currentNetWorthVal {
@@ -41,5 +41,45 @@ body {
 }
 
 #updatePITbtn {
-    right: 10%;
+    border: 1px solid red;
+}
+
+#wrapper {
+    width: 100%;
+    position: center;
+    border: 1px solid black;
+    overflow: hidden;
+}
+
+#accountForm {
+    display: none;
+    position: center;
+    bottom: 0;
+    right: 15px;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+}
+
+#accountType {
+    display: none;
+}
+
+#interestRates {
+    display: none;
+}
+
+#accountInfo {
+    display: none;
+}
+
+#isRetirement {
+    display: none;
+}
+
+#isCreditCard {
+    display: none;
+}
+
+#isLoan {
+    display: none;
 }

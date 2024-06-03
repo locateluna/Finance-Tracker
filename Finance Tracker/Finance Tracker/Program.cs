@@ -1,4 +1,9 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Finance_Tracker.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<Finance_TrackerContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("Finance_TrackerContext") ?? throw new InvalidOperationException("Connection string 'Finance_TrackerContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

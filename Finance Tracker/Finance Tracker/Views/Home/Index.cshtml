@@ -6,52 +6,118 @@
     <h1 class="display-4">Finance Tracker</h1>
     <p>This website is an interface that will mimic my <a href="https://docs.google.com/spreadsheets/d/1PAMhqKJXxiuwFeeDXgkYMKOS7X7--GTwWMi37hMGPSI/edit#gid=1676047141">finance spreadsheet</a>.</p>
 
-    <div id="currentNetWorthBox">
-        <div><h4>Current Net Worth</h4></div>
-        <div id="currentNetWorthVal">0</div>
-    </div>
+    <div id="wrapper">
+        <div id="currentNetWorthBox">
+            <div><h4>Current Net Worth</h4></div>
+            <div id="currentNetWorthVal">0</div>
+        </div>
     
-    <button type="button" onclick="openPITInfo()" id="updatePITbtn">Update point in time information</button>
-
+        <button type="button" onclick="openPITInfo()" id="updatePITbtn">Update point in time information</button>
+    </div>
     <div class="form-popup" id="PITForm">
         <form class="form-container">
             <h1>Update Point in Time Information</h1>
+            <div>
+                <label for="chaseChecking"><b>Chase Checking</b></label>
+                <input type="number" id="chaseChecking" required>
+            </div>
+            
+            <div>
+                <label for="chaseCat"><b>Chase Cat</b></label>
+                <input type="number" id="chaseCat" required>
+            </div>
+            
+            <div>
+                <label for="chaseGift"><b>Chase Gift</b></label>
+                <input type="number" id="chaseGift" required>
+            </div>
+            
+            <div>
+                <label for="chaseTravel"><b>Chase Travel</b></label>
+                <input type="number" required>
+            </div>
+            
+            <div>
+                <label for="vio"><b>Vio High Yield Savings</b></label>
+                <input type="number" required>
+            </div>
+            
+            <div>
+                <label for="FSA Account"><b>FSA Account</b></label>
+                <input type="number" required>
+            </div>
 
-            <label for="chaseChecking"><b>Chase Checking</b></label>
-            <input type="number" id="chaseChecking" required>
-
-            <br>
-
-            <label for="chaseCat"><b>Chase Cat</b></label>
-            <input type="number" id="chaseCat" required>
-
-            <br>
-
-            <label for="chaseGift"><b>Chase Gift</b></label>
-            <input type="number" id="chaseGift" required>
-
-            <br>
-
-            <label for="chaseTravel"><b>Chase Travel</b></label>
-            <input type="number" required>
-
-            <br>
-
-            <label for="vio"><b>Vio High Yield Savings</b></label>
-            <input type="number" required>
-
-            <br>
-
-            <label for="FSA Account"><b>FSA Account</b></label>
-            <input type="number" required>
-
-            <br>
-
-
+            <button type="submit" class="btn" onclick="openAddAccountForm()">Add New Account</button>
             <button type="submit" class="btn" onclick="updatePIT()">Update PIT</button>
             <button type="submit" class="btn" onclick="updateMonth()">Update Month</button>
             <button type="button" class="btn cancel" onclick="closePITInfo()">Close</button>
         </form>
     </div>
+
+    <div class="form-popup" id="accountForm">
+        <form class="form-container">
+            <h1>Add New Account</h1>
+
+            <div id="accountType">
+                <label for="newAccountType"><b>Account Type</b></label>
+                <select name="newAccountType" id="dropdown">
+                    <option value="default">Select an Account</option>
+                    <option value="checking" id="checking">Checking Account</option>
+                    <option value="savings" id="savings">Savings Account</option>
+                    <option value="investment" id="investment">Investment Account</option>
+                    <option value="creditCard" id="creditCard">Credit Card Account</option>
+                    <option value="loan" id="loan">Loan Account</option>
+                </select>
+
+                <button type="submit" class="btn" onclick="selectType()">Add</button>
+                <button type="button" class="btn cancel" onclick="closeSelectType()">Cancel</button>
+
+            </div>
+            
+            <div id="accountInfo">
+                <div>
+                    <label for="newAccountName"><b>Account Name</b></label>
+                    <input type="text" id="newAccountName" required>
+
+                    <br>
+
+                    <label for="accountValue"><b>Dollar Amount</b></label>
+                    <input type="number" id="accountValue" required>
+                </div>
+
+                <div id="interestRates">
+                    <label for="interestRates"><b>Interest Rate</b></label>
+                    <input type="number" required>
+                </div>
+
+                <div id="isRetirement">
+                    <label for="isRetirement"><b>Retirement Account</b></label>
+                    <input type="checkbox">
+                </div>
+
+                <div id="isCreditCard">
+                    <label for="statementBalance"><b>Statement Balance</b></label>
+                    <input type="number" required>
+                    <br>
+                    <label for="dueDate"><b>Due Date</b></label>
+                    <input type="number" required>
+                </div>
+
+                <div id="isLoan">
+                    <label for="minPayment"><b>Minimum Payment</b></label>
+                    <input type="number" required>
+                    <br>
+                    <label for="dueDate"><b>Due Date</b></label>
+                    <input type="number" required>
+                </div>
+
+                <button type="submit" class="btn" onclick="addAccount()">Add</button>
+                <button type="button" class="btn cancel" onclick="closeAddAccount()">Cancel</button>
+            </div>
+
+            
+        </form>
+    </div>
+
 
 </div>
