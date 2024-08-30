@@ -22,15 +22,13 @@ namespace Finance_Tracker.Controllers
         // GET: Accounts
         public async Task<IActionResult> Index()
         {
-              return _context.Account != null ? 
-                          View(await _context.Account.ToListAsync()) :
-                          Problem("Entity set 'Finance_TrackerContext.Account'  is null.");
+            return View(await _context.Account.ToListAsync());
         }
 
         // GET: Accounts/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Account == null)
+            if (id == null)
             {
                 return NotFound();
             }
@@ -70,7 +68,7 @@ namespace Finance_Tracker.Controllers
         // GET: Accounts/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Account == null)
+            if (id == null)
             {
                 return NotFound();
             }
@@ -121,7 +119,7 @@ namespace Finance_Tracker.Controllers
         // GET: Accounts/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Account == null)
+            if (id == null)
             {
                 return NotFound();
             }
@@ -141,23 +139,19 @@ namespace Finance_Tracker.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Account == null)
-            {
-                return Problem("Entity set 'Finance_TrackerContext.Account'  is null.");
-            }
             var account = await _context.Account.FindAsync(id);
             if (account != null)
             {
                 _context.Account.Remove(account);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool AccountExists(int id)
         {
-          return (_context.Account?.Any(e => e.Id == id)).GetValueOrDefault();
+            return _context.Account.Any(e => e.Id == id);
         }
     }
 }

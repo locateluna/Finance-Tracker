@@ -4,6 +4,6 @@
     {
         public int Id { get; set; }
         public required string Name { get; set; }
-        public required float Value { get; set; }
+        public float Value { get; set; }
     }
 }

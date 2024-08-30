@@ -1,4 +1,4 @@
-﻿using Finance_Tracker.Models;
+using Finance_Tracker.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -19,11 +19,6 @@ namespace Finance_Tracker.Controllers
         }
 
         public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        public IActionResult YearGlance()
         {
             return View();
         }
