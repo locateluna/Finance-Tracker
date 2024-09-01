@@ -15,5 +15,14 @@ namespace Finance_Tracker.Data
         }
 
         public DbSet<Finance_Tracker.Models.Account> Account { get; set; } = default!;
+        public DbSet<Finance_Tracker.Models.Saving> Saving { get; set; } = default!;
+        public DbSet<Finance_Tracker.Models.Investment> Investment { get; set; } = default!;
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Finance_Tracker.Models.Account>().ToTable("Account");
+            modelBuilder.Entity<Finance_Tracker.Models.Saving>().ToTable("Saving");
+            modelBuilder.Entity<Finance_Tracker.Models.Investment>().ToTable("Investment");
+        }
     }
 }
