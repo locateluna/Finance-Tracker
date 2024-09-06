@@ -1,0 +1,58 @@
+﻿@{
+    ViewData["Title"] = "Graph";
+}
+@section scripts
+{
+    <script src="~/js/graph.js"></script>
+}
+
+<h2>Graph</h2>
+
+<p>Hello from our Graph View Template!</p>
+
+<div class="body" style="background-color:lightpink; display:flex">
+    <div style="background-color:honeydew;">
+        <p>This is where graph will go.</p>
+    </div>
+    <div style="background-color:hotpink;">
+        <p>Filter</p>
+        <br />
+        <fieldset class="accounts">
+            <p>Account Type</p>
+            <ul>
+                <li>
+                    <label for="accounts"><input type="checkbox" name="accounts" value="accounts">All Accounts</label><br />
+                <ul>
+                    <li>
+                        <label for="savings"><input type="checkbox" name="savings" value="savings">Savings</label><br />
+                        <ul>
+                           <li>
+                               <label for="investments"><input type="checkbox" name="investments" value="investments">Investments</label><br />
+                           </li>
+                       </ul>
+                    </li>
+                    <li>
+                        <label for="debts"><input type="checkbox" name="debts" value="debts">Debts</label><br />
+                        <ul>
+                            <li>
+                                <label for="creditCards"><input type="checkbox" name="creditCards" value="creditCards">Credit Cards</label><br />
+                            </li>
+                        </ul>
+                    </li>
+                    
+                </ul>
+                </li>
+            </ul>
+        </fieldset>
+        <br />
+        <div>
+            <p>Time Period</p>
+            <label for="startDate">Start Date:</label>
+            <input type="date" id="startDate" name="startDate" />
+            <label for="endDate">End Date:</label>
+            <input type="date" id="endDate" name="endDate" />
+        </div>
+        <button type="button" onclick="alert('Button pressed, no action taken.')">Submit</button>
+    </div>
+
+</div>

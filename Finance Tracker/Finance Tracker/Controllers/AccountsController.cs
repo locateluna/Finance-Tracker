@@ -153,5 +153,10 @@ namespace Finance_Tracker.Controllers
         {
             return _context.Account.Any(e => e.Id == id);
         }
+
+        public async Task<IActionResult> Graph()
+        {
+            return View();
+        }
     }
 }
