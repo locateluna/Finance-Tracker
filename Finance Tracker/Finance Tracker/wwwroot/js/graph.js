@@ -1,10 +1,14 @@
 ﻿addCheckboxListeners();
 getSelectedOptions();
 
+const submitButton = document.querySelector("#submit");
+submitButton.addEventListener("click", queryAccts);
+
 function getSelectedOptions(){
     var checkedCheckboxes = document.querySelectorAll(`.accounts input[type='checkbox']:checked`);
     var selectedOptions = Array.from(checkedCheckboxes).map(checkbox => checkbox.value);
     console.log(selectedOptions);
+    return selectedOptions;
 }
 
 function addCheckboxListeners() {
@@ -31,4 +35,9 @@ function updateParentCheckbox(childCheckbox) {
     if (parentLi.closest('ul').closest('li')) {
         this.updateParentCheckbox(parentCheckbox);
     }
+}
+
+function queryAccts() {
+    console.log("querying Account data");
+    var selectedAccts = getSelectedOptions();
 }

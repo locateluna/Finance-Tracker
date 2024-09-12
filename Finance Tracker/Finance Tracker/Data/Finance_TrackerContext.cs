@@ -19,6 +19,10 @@ namespace Finance_Tracker.Data
         public DbSet<Finance_Tracker.Models.Investment> Investment { get; set; } = default!;
         public DbSet<Finance_Tracker.Models.Debt> Debt { get; set; } = default!;
         public DbSet<Finance_Tracker.Models.CreditCard> CreditCard { get; set; } = default!;
+        public DbSet<Finance_Tracker.Models.Budget> Budget { get; set; } = default!;
+        public DbSet<Finance_Tracker.Models.Transaction> Transaction { get; set; } = default!;
+        public DbSet<Finance_Tracker.Models.Graph> Graph
+        { get; set; } = default!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -27,6 +31,9 @@ namespace Finance_Tracker.Data
             modelBuilder.Entity<Finance_Tracker.Models.Investment>().ToTable("Investment");
             modelBuilder.Entity<Finance_Tracker.Models.Debt>().ToTable("Debt");
             modelBuilder.Entity<Finance_Tracker.Models.CreditCard>().ToTable("CreditCard");
+            modelBuilder.Entity<Finance_Tracker.Models.Budget>().ToTable("Budget");
+            modelBuilder.Entity<Finance_Tracker.Models.Graph>().ToTable("Graph");
+
         }
     }
 }

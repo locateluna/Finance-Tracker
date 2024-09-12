@@ -1,0 +1,152 @@
+﻿@model IEnumerable<Finance_Tracker.Models.Graph>
+
+@{
+    ViewData["Title"] = "Index";
+}
+@section scripts
+{
+    <script src="~/js/graph.js"></script>
+}
+
+<h2>Graph</h2>
+
+<p>Hello from our Graph View Template!</p>
+
+<div class="body" style="background-color:lightpink; display:flex">
+    <div style="background-color:honeydew;">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.GraphNum)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.StartDt)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EndDt)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.AcctNum)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.GraphNum)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.StartDt)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EndDt)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AcctNum)
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                            <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div style="background-color:hotpink;">
+        <p>Filter</p>
+        <br />
+        <fieldset class="accounts">
+            <p>Account Type</p>
+            <ul>
+                <li>
+                    <label for="accounts"><input type="checkbox" name="accounts" value="Account">All Accounts</label><br />
+                    <ul>
+                        <li>
+                            <label for="savings"><input type="checkbox" name="savings" value="Saving">Savings</label><br />
+                            <ul>
+                                <li>
+                                    <label for="investments"><input type="checkbox" name="investments" value="Investment">Investments</label><br />
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <label for="debts"><input type="checkbox" name="debts" value="Debt">Debts</label><br />
+                            <ul>
+                                <li>
+                                    <label for="creditCards"><input type="checkbox" name="creditCards" value="CreditCard">Credit Cards</label><br />
+                                </li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </li>
+            </ul>
+        </fieldset>
+        <br />
+        <div>
+            <p>Time Period</p>
+            <label for="startDate">Start Date:</label>
+            <input type="date" id="startDate" name="startDate" />
+            <label for="endDate">End Date:</label>
+            <input type="date" id="endDate" name="endDate" />
+        </div>
+        <button type="button" id="submit">Submit</button>
+    </div>
+
+</div>
+@*
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.GraphNum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartDt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EndDt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AcctNum)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.GraphNum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndDt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AcctNum)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+*@

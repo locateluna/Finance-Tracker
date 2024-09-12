@@ -1,0 +1,49 @@
+﻿@model Finance_Tracker.Models.Graph
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Graph</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="GraphNum" class="control-label"></label>
+                <input asp-for="GraphNum" class="form-control" />
+                <span asp-validation-for="GraphNum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StartDt" class="control-label"></label>
+                <input asp-for="StartDt" class="form-control" />
+                <span asp-validation-for="StartDt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EndDt" class="control-label"></label>
+                <input asp-for="EndDt" class="form-control" />
+                <span asp-validation-for="EndDt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AcctNum" class="control-label"></label>
+                <input asp-for="AcctNum" class="form-control" />
+                <span asp-validation-for="AcctNum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
