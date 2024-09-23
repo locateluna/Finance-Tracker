@@ -24,3 +24,7 @@ body {
 ul {
     list-style-type:none;
 }
+
+.pop_up {
+    display: none;
+}

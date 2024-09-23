@@ -4,6 +4,12 @@ getSelectedOptions();
 const submitButton = document.querySelector("#submit");
 submitButton.addEventListener("click", queryAccts);
 
+const saveButton = document.querySelector("#saveGraph");
+saveButton.addEventListener("click", saveGraph);
+
+const closeButton = document.querySelector("#closePopUp");
+closeButton.addEventListener("click", closePopUp);
+
 function getSelectedOptions(){
     var checkedCheckboxes = document.querySelectorAll(`.accounts input[type='checkbox']:checked`);
     var selectedOptions = Array.from(checkedCheckboxes).map(checkbox => checkbox.value);
@@ -40,4 +46,20 @@ function updateParentCheckbox(childCheckbox) {
 function queryAccts() {
     console.log("querying Account data");
     var selectedAccts = getSelectedOptions();
+}
+
+function saveGraph() {
+    console.log("Saving graph");
+    var submitButton = document.querySelector('.pop_up');
+    submitButton.style.display = 'flex';
+    var filterBox = document.querySelector('.graphInfo');
+    filterBox.style.display = 'none';
+}
+
+function closePopUp() {
+    console.log("closing pop up");
+    var submitButton = document.querySelector('.pop_up');
+    submitButton.style.display = 'none';
+    var filterBox = document.querySelector('.graphInfo');
+    filterBox.style.display = 'flex';
 }
